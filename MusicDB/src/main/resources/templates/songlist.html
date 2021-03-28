@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+<head>
+<title>AKF Music Database</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<h1 class="text-center">AKF Music Database</h1>
+
+<table class="table table-striped">
+
+	<tr>
+		<th>Title</th>
+		<th>Artist</th>
+		<th>Album</th>
+		<th>Year</th>
+		<th>Length</th>
+	</tr>
+	
+	<tr th:each = "song : ${songs}">
+		<td th:text="${song.title}"></td>
+		<td th:text="${song.artist}"></td>
+		<td th:text="${song.album}"></td>
+		<td th:text="${song.year}"></td>
+		<td th:text="${song.length}"></td>
+	</tr>
+
+</table>
+</body>
