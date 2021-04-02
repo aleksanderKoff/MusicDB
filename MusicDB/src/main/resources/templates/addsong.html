@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+<head>
+<title>AKF Music Database</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1 style=padding-left:10px>Add a new song to the database</h1>
+<div>
+	<form class="form-horizontal" th:object="${song}" th:action="@{save}" action="#" method="post">
+	<div class="form-group" style=padding-left:10px>
+		<label for="title">Title</label>
+		<div class="col-sm-10">
+			<input type="text" id="title" th:field="*{title}"/>
+		</div>
+	</div>
+	<div class="form-group" style=padding-left:10px>
+		<label for="artist">Artist</label>
+		<div class="col-sm-10">
+			<input type="text" id="artist" th:field="*{artist}"/>
+		</div>
+	</div>
+	<div class="form-group" style=padding-left:10px>
+		<label for="album">Album</label>
+		<div class="col-sm-10">
+			<input type="text" id="album" th:field="*{album}"/>
+		</div>
+	</div>
+	<div class="form-group" style=padding-left:10px>
+		<label for="year">Year</label>
+		<div class="col-sm-10">
+			<input type="text" id="year" th:field="*{year}"/>
+		</div>
+	</div>
+	<div class="form-group" style=padding-left:10px>
+		<label for="length">Length</label>
+		<div class="col-sm-10">
+			<input type="text" id="length" th:field="*{length}"/>
+		</div>
+	</div>
+	<div class="form-group" style=padding-left:10px>
+		<label for="genre">Genre</label>
+		<div class="col-sm-10">
+			<select id="genre" th:field="*{genre}">
+				<option th:each="genre: ${genres}"
+				th:value="${genre.genreId}"
+				th:text="${genre.name}"></option>
+			</select>
+		</div> 
+	</div>
+	<div class="form-group" style=padding-left:10px>
+		<label for="playlist">Playlist</label>
+		<div class="col-sm-10">
+			<select id="playlist" th:field="*{playlists}">
+				<option th:each="playlist: ${playlists}"
+				th:value="${playlist.playlistId}"
+				th:text="${playlist.name}"></option>
+			</select>
+		</div> 
+	</div>
+	<div style=padding-left:25px>
+	<input type="submit" value="Save" class="btn btn-primary"></input>
+	</div>
+	</form>
+</div>
+
+
+</body>
+
+</html>

@@ -8,6 +8,12 @@
 
 <body>
 <h1 class="text-center">AKF Music Database</h1>
+<div class="text-right" style=padding-right:60px>
+	<h2 th:inline="text">Logged in as: [[${#httpServletRequest.remoteUser}]]</h2>
+	<form th:action="@{/logout}" method="post">
+		<input type="submit" value="Sign Out"/>
+	</form>
+</div>
 
 <table class="table table-striped">
 
@@ -17,6 +23,8 @@
 		<th>Album</th>
 		<th>Year</th>
 		<th>Length</th>
+		<th>Genre</th>
+		<th>Playlist</th>
 	</tr>
 	
 	<tr th:each = "song : ${songs}">
@@ -25,7 +33,18 @@
 		<td th:text="${song.album}"></td>
 		<td th:text="${song.year}"></td>
 		<td th:text="${song.length}"></td>
+		<td th:text="${song.genre.name}"></td>
+		<td>
+			<span th:if="${song.playlists.isEmpty() == true}">Not on any playlist</span>
+			<span th:unless="${song.playlists.isEmpty() == true}" th:text="${song.playlists.iterator().next().name}"></span>
+		</td>
+		<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${song.songId})}" class="btn btn-danger">Delete</a></td>
+		<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/edit/{id}(id=${song.songId})}" class="btn btn-primary">Edit</a></td>
 	</tr>
 
 </table>
+<div style="padding-left:10px">
+<a sec:authorize="hasAuthority('ADMIN')" href="/addsong" class="btn btn-success">Add a new song</a>
+<a href="/genrelist" class="btn btn-success">Genre List</a>
+</div>
 </body>
