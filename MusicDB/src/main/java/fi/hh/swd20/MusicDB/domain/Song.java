@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -22,10 +24,15 @@ public class Song {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long songId;
+	@Size(min=1, max=30)
 	private String title;
+	@Size(min=1, max=30)
 	private String artist;
+	@Size(min=1, max=30)
 	private String album;
+	@Size(min=4, max=4)
 	private String year;
+	@Size(min=1, max=10)
 	private String length;
 	
 	@ManyToOne

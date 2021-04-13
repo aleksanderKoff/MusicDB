@@ -26,6 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter { // spring 
 		.headers().frameOptions().sameOrigin()
 		.and()
 	   .formLogin()
+	    .loginPage("/login")
 	    .defaultSuccessUrl("/songlist", true)
 	    .permitAll()
 	    .and()

@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+<link type="text/css" rel="stylesheet" href="css/musicDBcss.css" th:href="@{/css/musicDBcss.css}">
 <head>
 <title>AKF Music Database Login page</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
+
+<h1 class=text-center>Please log in to AKF MusicDB</h1>
 <body>
-	<div th:if="${param.error}">
+	<div class=text-center th:if="${param.error}">
 		Invalid username or password! Please try again.
 	</div>
-	<form th:action="@{/login}" method="post">
+	<form class=text-center th:action="@{/login}" method="post">
 		<div><label> Username: <input type="text" name="username"/></label></div>
 		<div><label> Password: <input type="password" name="password"/></label></div>
-		<div><input type="submit" value="Sign In"/></div>
+		<div><input type="submit" value="Sign In" class="btn btn-info"/></div>
 	</form>
 
 </body>

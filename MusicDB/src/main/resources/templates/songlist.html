@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+<link type="text/css" rel="stylesheet" href="css/musicDBcss.css" th:href="@{/css/musicDBcss.css}">
 <head>
 <title>AKF Music Database</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -44,7 +45,7 @@
 
 </table>
 <div style="padding-left:10px">
-<a sec:authorize="hasAuthority('ADMIN')" href="/addsong" class="btn btn-success">Add a new song</a>
-<a href="/genrelist" class="btn btn-success">Genre List</a>
+<a sec:authorize="hasAuthority('ADMIN')" href="/addsong" class="btn btn-info">Add a new song</a>
+<a href="/genrelist" class="btn btn-info">Genre List</a>
 </div>
 </body>

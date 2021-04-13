@@ -3,10 +3,13 @@ package fi.hh.swd20.MusicDB.web;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -66,9 +69,14 @@ public class SongController {
 	}
 	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String save(Song song) {
+	public String save(@Valid Song song, BindingResult bindingResult, Model model) {
+		if (bindingResult.hasErrors()) {
+			return "songlist";
+		} else {
+		model.addAttribute("song", song);
 		songRepository.save(song);
 		return "redirect:songlist";
+		}
 	}
 	
 	@RequestMapping(value = "/songs", method = RequestMethod.GET)

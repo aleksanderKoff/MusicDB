@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+<link type="text/css" rel="stylesheet" href="css/musicDBcss.css" th:href="@{/css/musicDBcss.css}" />
 <head>
 <title>AKF Music Database</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<h1 style=padding-left:10px>Add a new genre</h1>
-<div>
+<h1 style=padding-left:10px class=text-center>Add a new genre</h1>
+
 	<form class="form-horizontal" th:object="${genre}" th:action="@{savegenre}" action="#" method="post">
 	<div class="form-group" style=padding-left:10px>
-		<label for="genre">Genre</label>
+		<label for="genre" class="col-sm-2 control-label">Genre</label>
 		<div class="col-sm-10">
-			<input type="text" id="genre" th:field="*{name}"/>
+			<input type="text" class="form-control" id="genre" th:field="*{name}"/>
 		</div>
 	</div>
 	<div style=padding-left:25px>
-	<input type="submit" value="Save" class="btn btn-primary"></input>
+	<input type="submit" value="Save" class="btn btn-info"></input>
 	</div>
 	</form>
-</div>
 
 
 </body>
