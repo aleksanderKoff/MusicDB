@@ -71,7 +71,10 @@ public class SongController {
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String save(@Valid Song song, BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
-			return "songlist";
+			// model.addAttribute("song", new Song());
+			model.addAttribute("genres", genreRepository.findAll());
+			model.addAttribute("playlists", playlistRepository.findAll());
+			return "addsong";
 		} else {
 		model.addAttribute("song", song);
 		songRepository.save(song);

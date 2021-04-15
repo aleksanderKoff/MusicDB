@@ -9,23 +9,23 @@
 
 <body >
 
-<h1 class="text-center">List of music genres</h1>
+<h1 class="text-center">All playlists</h1>
 
 <table class="table table-striped">
 
 	<tr>
-		<th>Genre</th>
+		<th>Playlist</th>
 	</tr>
 	
-	<tr th:each = "genre : ${genres}">
-		<td th:text="${genre.name}"></td>
+	<tr th:each = "playlist : ${playlists}">
+		<td th:text="${playlist.name}"></td>
 		<!-- <td><a th:href="@{/delete/{id}(id=${category.id})}" class="btn btn-danger">Delete</a></td> -->
 		<!-- <td><a th:href="@{/edit/{id}(id=${category.id})}" class="btn btn-primary">Edit</a></td> -->
 	</tr>
 
 </table>
 <div style=padding-left:10px>
-<a sec:authorize="hasAuthority('ADMIN')" href="/addgenre" class="button1">Add a new genre</a>
+<a sec:authorize="hasAuthority('ADMIN')" href="/addplaylist" class="button1">Create a new playlist</a>
 </div>
 <div style="padding-left:10px; padding-top:20px">
 	<a href="/songlist" class="button1">Return to songlist</a>

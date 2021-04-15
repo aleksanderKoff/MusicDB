@@ -1,16 +1,71 @@
 body {
   background-color: #333333;
   color: #fff;
+  font-family: 'proxima-nova', sans-serif;
 }
 
 h1 {
 	color: #99ceff;
+	font-family: 'proxima-nova', sans-serif;
+	font-size: 50 px;
+	padding-top: 20px;
+	padding-bottom: 50px;
 }
 
 h2 {
-	color: #fff;
+	color: #99ceff;
+	font-family: 'proxima-nova', sans-serif;
+	font-size: 25px;
 }
 
 table, th, td {
+	color: #FFFFFF;
+	border-top: solid 2px #99ceff;
+	border-bottom: solid 1px #99ceff;
+}
+
+.button1 {
+	border-radius: 10px;
+	font-size: 16px;
+	background-color: #99ceff;
+	border: none;
+	font-family: 'proxima-nova', sans-serif;
+	color: #FFFFFF;
+	padding: 10px 14px;
+  	transition: 0.4s;
+  	cursor: pointer;
+  	text-decoration: none;
+}
+
+.button1:hover {
+	background-color: #66b5ff;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.buttondelete {
+	border-radius: 10px;
+	font-size: 16px;
+	background-color: #ff3300;
+	border: none;
+	font-family: 'proxima-nova', sans-serif;
 	color: #fff;
+	padding: 10px 14px;
+  	transition: 0.4s;
+  	cursor: pointer;
+  	text-decoration: none;
+}
+
+.buttondelete:hover {
+	background-color: #b32400; 
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.errors {
+	background-color: #ffEEEE;
+	border: solid 1px #ff5c33;
+	border-radius: 10px;
+	color: #ff5c33;
+	padding: 2px 16px;
 }

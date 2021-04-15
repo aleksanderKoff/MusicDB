@@ -7,13 +7,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<h1 style=padding-left:10px class=text-center>Add a new genre</h1>
+<h1 style=padding-left:10px class=text-center>Create a new playlist</h1>
 
-	<form class="form-horizontal" th:object="${genre}" th:action="@{savegenre}" action="#" method="post">
+	<form class="form-horizontal" th:object="${playlist}" th:action="@{saveplaylist}" action="#" method="post">
 	<div class="form-group" style=padding-left:10px>
-		<label for="genre" class="col-sm-2 control-label">Genre</label>
+		<label for="playlist" class="col-sm-2 control-label">Playlist</label>
 		<div class="col-sm-10">
-			<input type="text" class="form-control" id="genre" th:field="*{name}"/>
+			<input type="text" class="form-control" id="playlist" th:field="*{name}"/>
 			<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="errors">Error</span>
 		</div>
 	</div>
@@ -22,7 +22,7 @@
 	</div>
 	</form>
 	<div style="padding-left:10px; padding-top:10px">
-		<a href="/songlist" class="button1">Return to songlist</a>
+		<a href="/playlists" class="button1">Return to playlists</a>
 	</div>
 
 
