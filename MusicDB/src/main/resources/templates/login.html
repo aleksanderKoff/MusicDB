@@ -6,16 +6,18 @@
 <title>AKF Music Database Login page</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-
-<h1 class=text-center>Please log in to AKF MusicDB</h1>
+<div class="header">
+	<h1>AKF Music Database</h1> 
+</div>
+<h1 class="text-center">Please log in to AKF MusicDB</h1>
 <body>
-	<div class=text-center th:if="${param.error}">
+	<div class="center errors" th:if="${param.error}">
 		Invalid username or password! Please try again.
 	</div>
-	<form class=text-center th:action="@{/login}" method="post">
+	<form class="center" th:action="@{/login}" method="post">
 		<div><label> Username: <input type="text" name="username"/></label></div>
 		<div><label> Password: <input type="password" name="password"/></label></div>
-		<div><input type="submit" value="Sign In" class="button1"/></div>
+		<div class="text-center"><input type="submit" value="Sign In" class="button1"/></div>
 	</form>
 
 </body>

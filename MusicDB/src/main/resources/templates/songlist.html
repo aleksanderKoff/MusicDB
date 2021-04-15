@@ -8,7 +8,15 @@
 </head>
 
 <body>
-<h1 class="text-center">AKF Music Database</h1>
+<div class="header">
+	<h1 class="text-center">AKF Music Database</h1> 
+	<div>
+	<h2 th:inline="text">Logged in as: [[${#httpServletRequest.remoteUser}]]</h2>
+	<form th:action="@{/logout}" method="post">
+		<input class="button1" type="submit" value="Sign Out"/>
+	</form>
+	</div>
+</div>
 
 <table class="table table-striped">
 
@@ -46,12 +54,6 @@
 <div style="padding-left:10px; padding-top:20px">
 <a href="/genrelist" class="button1">Genre List</a>
 <a href="/playlists" class="button1">Playlists</a>
-</div>
-<div style="padding-left:10px; padding-top:40px">
-	<h2 th:inline="text">Logged in as: [[${#httpServletRequest.remoteUser}]]</h2>
-	<form th:action="@{/logout}" method="post">
-		<input class="button1" type="submit" value="Sign Out"/>
-	</form>
 </div>
 
 </body>

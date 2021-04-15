@@ -1,21 +1,28 @@
 body {
   background-color: #333333;
   color: #fff;
-  font-family: 'proxima-nova', sans-serif;
+  font-family: Tahoma,Verdana,Segoe,sans-serif; 
 }
 
 h1 {
 	color: #99ceff;
-	font-family: 'proxima-nova', sans-serif;
+	font-family: Tahoma,Verdana,Segoe,sans-serif; 
 	font-size: 50 px;
-	padding-top: 20px;
-	padding-bottom: 50px;
 }
 
 h2 {
 	color: #99ceff;
-	font-family: 'proxima-nova', sans-serif;
-	font-size: 25px;
+	font-family: Tahoma,Verdana,Segoe,sans-serif; 
+	font-size: 20px;
+}
+.header {
+	background: #262626;
+	margin-bottom: 40px;
+	padding:15px;
+	display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 table, th, td {
@@ -29,7 +36,7 @@ table, th, td {
 	font-size: 16px;
 	background-color: #99ceff;
 	border: none;
-	font-family: 'proxima-nova', sans-serif;
+	font-family: Tahoma,Verdana,Segoe,sans-serif; 
 	color: #FFFFFF;
 	padding: 10px 14px;
   	transition: 0.4s;
@@ -48,7 +55,7 @@ table, th, td {
 	font-size: 16px;
 	background-color: #ff3300;
 	border: none;
-	font-family: 'proxima-nova', sans-serif;
+	font-family: Tahoma,Verdana,Segoe,sans-serif; 
 	color: #fff;
 	padding: 10px 14px;
   	transition: 0.4s;
@@ -63,9 +70,15 @@ table, th, td {
 }
 
 .errors {
+	text-align: center;
 	background-color: #ffEEEE;
 	border: solid 1px #ff5c33;
 	border-radius: 10px;
 	color: #ff5c33;
 	padding: 2px 16px;
+}
+
+.center {
+  margin: auto;
+  width: 10%;
 }

@@ -7,7 +7,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<h1 style=padding-left:10px class=text-center>Add a new song to the database</h1>
+<div class="header">
+	<h1 class="text-center">AKF Music Database</h1> 
+	<div>
+	<h2 th:inline="text">Logged in as: [[${#httpServletRequest.remoteUser}]]</h2>
+	<form th:action="@{/logout}" method="post">
+		<input class="button1" type="submit" value="Sign Out"/>
+	</form>
+	</div>
+</div>
 
 <form class="form-horizontal" th:object="${song}" th:action="@{save}" action="#" method="post">
 
