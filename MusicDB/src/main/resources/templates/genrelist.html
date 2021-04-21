@@ -18,25 +18,36 @@
 	</form>
 	</div>
 </div>
+<div>
+	<ul>
+  		<li><a href="/songlist">Home</a></li>
+  		<li><a class="active" href="/genrelist">Genre List</a></li>
+  		<li><a href="/playlists">Playlists</a></li>
+  		<li><a href="/about">About</a></li>
+	</ul>
+</div>
 
 <table class="table table-striped">
 
 	<tr>
 		<th>Genre</th>
+		<th>List of songs</th>
+		
 	</tr>
 	
 	<tr th:each = "genre : ${genres}">
 		<td th:text="${genre.name}"></td>
-		<!-- <td><a th:href="@{/delete/{id}(id=${category.id})}" class="btn btn-danger">Delete</a></td> -->
-		<!-- <td><a th:href="@{/edit/{id}(id=${category.id})}" class="btn btn-primary">Edit</a></td> -->
+		<td th:each="song : ${genre.songs}">
+			<span th:text="${song.title}"></span>
+		</td>
 	</tr>
 
 </table>
 <div style=padding-left:10px>
-<a sec:authorize="hasAuthority('ADMIN')" href="/addgenre" class="button1">Add a new genre</a>
+<a href="/addgenre" class="button1">Add a new genre</a>
 </div>
 <div style="padding-left:10px; padding-top:20px">
-	<a href="/songlist" class="button1">Return to songlist</a>
+	<a href="/songlist" class="button1">Return to home page</a>
 </div>
 </body>
 

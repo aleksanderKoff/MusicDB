@@ -7,8 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
-<body >
-
+<body>
 <div class="header">
 	<h1 class="text-center">AKF Music Database</h1> 
 	<div>
@@ -19,35 +18,22 @@
 	</div>
 </div>
 <div>
-	<ul>
-  		<li><a href="/songlist">Home</a></li>
-  		<li><a href="/genrelist">Genre List</a></li>
-  		<li><a class="active" href="/playlists">Playlists</a></li>
-  		<li><a href="/about">About</a></li>
-	</ul>
+<ul>
+  <li><a href="/songlist">Home</a></li>
+  <li><a href="/genrelist">Genre List</a></li>
+  <li><a href="/playlists">Playlists</a></li>
+  <li><a class="active" href="/about">About</a></li>
+</ul>
 </div>
 
-<table class="table table-striped">
+<p class="text-center">
+This site was created as a practice project for a course ran by Haaga-Helia UAS.
+</p>
 
-	<tr>
-		<th>Playlist</th>
-		<th>List of songs</th>
-	</tr>
-	
-	<tr th:each = "playlist : ${playlists}">
-		<td th:text="${playlist.name}"></td>
-		<td th:each="song : ${playlist.songs}">
-			<span th:text="${song.title}"></span>
-		</td>
-	</tr>
+<p class="text-center">
+Feel free to test it out by adding some songs, genres or playlists!
+</p>
 
-</table>
-<div style=padding-left:10px>
-<a href="/addplaylist" class="button1">Create a new playlist</a>
-</div>
-<div style="padding-left:10px; padding-top:20px">
-	<a href="/songlist" class="button1">Return to home page</a>
-</div>
+
+
 </body>
-
-</html>

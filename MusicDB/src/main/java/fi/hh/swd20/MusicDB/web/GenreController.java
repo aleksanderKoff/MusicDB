@@ -3,16 +3,19 @@ package fi.hh.swd20.MusicDB.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import fi.hh.swd20.MusicDB.domain.Genre;
 import fi.hh.swd20.MusicDB.domain.GenreRepository;
+import fi.hh.swd20.MusicDB.domain.SongRepository;
 
 @Controller
 public class GenreController {
 	
 	@Autowired GenreRepository genreRepository;
+	@Autowired SongRepository songRepository;
 	
 	@RequestMapping(value = "/genrelist", method = RequestMethod.GET)
 	public String genreList(Model model) {

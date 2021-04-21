@@ -16,6 +16,14 @@
 	</form>
 	</div>
 </div>
+<div>
+	<ul>
+  		<li><a href="/songlist">Home</a></li>
+  		<li><a href="/genrelist">Genre List</a></li>
+  		<li><a href="/playlists">Playlists</a></li>
+  		<li><a href="/about">About</a></li>
+	</ul>
+</div>
 
 
 <form class="form-horizontal" th:object="${song}" th:action="@{../save}" action="#" method="post">
@@ -85,7 +93,7 @@
 	</div>
 </form>
 <div style="padding-left:10px; padding-top:10px">
-	<a href="/songlist" class="button1">Return to songlist</a>
+	<a href="/songlist" class="button1">Return to home page</a>
 </div>
 
 </body>

@@ -17,6 +17,14 @@
 	</form>
 	</div>
 </div>
+<div>
+<ul>
+  <li><a class="active" href="/songlist">Home</a></li>
+  <li><a href="/genrelist">Genre List</a></li>
+  <li><a href="/playlists">Playlists</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+</div>
 
 <table class="table table-striped">
 
@@ -49,11 +57,7 @@
 
 </table>
 <div style="padding-left:10px">
-	<a sec:authorize="hasAuthority('ADMIN')" href="/addsong" class="button1">Add a new song</a>
-</div>
-<div style="padding-left:10px; padding-top:20px">
-<a href="/genrelist" class="button1">Genre List</a>
-<a href="/playlists" class="button1">Playlists</a>
+	<a href="/addsong" class="button1">Add a new song</a>
 </div>
 
 </body>

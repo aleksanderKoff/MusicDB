@@ -38,6 +38,11 @@ public class SongController {
 		return "login";
 	}
 	
+	@RequestMapping(value = "/about")
+	public String about() {
+		return "about";
+	}
+	
 	@RequestMapping(value = "/songlist", method = RequestMethod.GET)
 	public String songList(Model model) {
 		model.addAttribute("songs", songRepository.findAll());
